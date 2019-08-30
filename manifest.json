@@ -1,32 +1,20 @@
 {
-   "commerceSuiteVersion": "18.08.1",
+   "commerceSuiteVersion": "1811.5",
    "extensions": [
-       "yacceleratorstorefront",
-       "backoffice",
-       "platformbackoffice",
-       "electronicsstore",
-       "basecommercebackoffice",       
-       "yacceleratorfulfilmentprocess",
-       "solrfacetsearchbackoffice",
-       "commerceservicesbackoffice",
-       "cmscockpit",
-       "smartedit"
+       "optcustomerfacade",      
+       "warehousingwebservices",
+      "warehousingbackoffice",
    ],
    "storeFrontExtension": "yacceleratorstorefront",
    "storeFrontWebRoot": "/yacceleratorstorefront",
-   "properties": [
+   "recipe": "b2c_acc_plus",
+   "storefrontAddons": [
         {
-            "key": "test.property.1",
-            "value": "test.property.1.value"
+            "addon": "ordermanagementaddon",
+            "storefront": "yacceleratorstorefront",
+            "template": "yacceleratorstorefront"
         },
-        {
-            "key": "test.property.2",
-            "value": "test.property.2.value"
-        }
     ],
-   "project": "ps_cc2v1",
-   "recipe": "pipeline_b2c_dockerized",
-   "resultingImageVersion": "ps_cc2v1",    
    "aspects": [
          {
             "name": "backoffice",
@@ -43,25 +31,12 @@
                 {
                     "name": "backoffice",
                     "contextPath": "/backoffice"
-                },
-                {
-                    "name": "cmscockpit",
-                    "contextPath": "/cmscockpit"
-                },
-                {
-                    "name": "smartedit",
-                    "contextPath": "/smartedit"
                 }
             ]
         },
         {
             "name": "accstorefront",
-            "properties": [
-               {
-                    "key": "regioncache.queryregion.evictionpolicy",
-                    "value": "LRU"
-                }
-            ],
+            "properties": [],
             "webapps": [
                 {
                     "name": "hac",
@@ -73,46 +48,13 @@
                 },
                 {
                     "name": "yacceleratorstorefront",
-                    "contextPath": "/backoffice"
-                },
-                {
-                    "name": "smartedit",
-                    "contextPath": "/smartedit"
+                    "contextPath": "/yacceleratorstorefront"
                 }
             ]
         },
-       {
+        {
             "name": "backgroundProcessing",
-            "properties": [
-                {
-                    "key": "cluster.node.groups",
-                    "value": "backgroundProcessing"
-                },
-                {
-                    "key": "task.workers.max",
-                    "value": "40"
-                },
-                {
-                    "key": "impex.import.workers",
-                    "value": "8"
-                },
-                {
-                    "key": "catalog.sync.workers",
-                    "value": "8"
-                },
-                {
-                    "key": "task.polling.interval",
-                    "value": "1"
-                },
-                {
-                    "key": "processengine.process.canjoinpreviousnode.default",
-                    "value": "true"
-                },
-                {
-                    "key": "yacceleratorfulfilmentprocess.fraud.scoreLimit",
-                    "value": "10000"
-                }                  
-            ],
+            "properties": [],
             "webapps": [
                 {
                     "name": "hac",
@@ -124,7 +66,7 @@
                 },
                 {
                     "name": "yacceleratorstorefront",
-                    "contextPath": "/backoffice"
+                    "contextPath": "/yacceleratorstorefront"
                 }
             ]
         }
