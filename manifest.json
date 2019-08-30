@@ -3,7 +3,7 @@
    "extensions": [
        "optcustomerfacade",      
        "warehousingwebservices",
-      "warehousingbackoffice",
+      "warehousingbackoffice"
    ],
    "storeFrontExtension": "yacceleratorstorefront",
    "storeFrontWebRoot": "/yacceleratorstorefront",
@@ -13,7 +13,7 @@
             "addon": "ordermanagementaddon",
             "storefront": "yacceleratorstorefront",
             "template": "yacceleratorstorefront"
-        },
+        }
     ],
    "aspects": [
          {
